@@ -10,9 +10,26 @@ const multiply = (a, b) => a * b;
 // Divide func:
 const divide = (a, b) => b === 0 ? "Error: Cannot divide by 0" : a / b;
 
-console.log(add(3, 5));
-console.log(subtract(10, 4));
-console.log(multiply(4, 7));
-console.log(divide(10, 2));
-console.log(divide(10, 0));
-console.log(divide(144, 2));
+// 3 varaibles to represent: 1st num, operator, 2nd num.
+let firstNum = 0;
+let secondNum = 0;
+let operator = '';
+
+const operate = (firstNum, operator, secondNum) => {
+    const operations = {
+        '+': add,
+        '-': subtract,
+        '*': multiply,
+        '/': divide
+    };
+    // If operator exist --> it calls another func:
+    // For example --> return 'add(firstNum, secondNum)'
+    // Longer way:
+    //  if (operator === "+") {
+    // return add(num1, num2);  
+    // not exist? return Error...
+    return operations[operator] ? operations[operator](firstNum, secondNum) : "Error";
+};
+
+
+console.log(operate(606, "+", 6));
