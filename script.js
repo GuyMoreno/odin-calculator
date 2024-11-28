@@ -33,3 +33,24 @@ const operate = (firstNum, operator, secondNum) => {
 
 
 console.log(operate(606, "+", 6));
+
+let displayValue = "0";
+
+function updateDisplay(value) {
+    if (displayValue === '0') {
+        displayValue = value;
+    } else {
+        displayValue += value;
+    }
+    document.querySelector("#display").textContent = displayValue;
+}
+
+const buttons = document.querySelectorAll("button");
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        const value = button.textContent;
+        if (!isNaN(value) || value === ".") {
+            updateDisplay(value);
+        }
+    });
+});
