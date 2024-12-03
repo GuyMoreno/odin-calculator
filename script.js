@@ -5,14 +5,14 @@ const subtract = (a, b) => a - b;
 // Multiply func:
 const multiply = (a, b) => a * b;
 // Divide func:
-const divide = (a, b) => b === 0 ? "Error: Cannot divide by 0" : a / b;
+const divide = (a, b) => b === 0 ? "Error: Cannot divide by 0" : (a / b).toFixed(2);
 
 
 const operate = (firstNum, operator, secondNum) => {
     const operations = {
         '+': add,
         '-': subtract,
-        '*': multiply,
+        'X': multiply,
         '/': divide
     };
     // If operator exist --> it calls another func:
@@ -48,10 +48,9 @@ function clearDisplay() {
 }
 
 
-
-
 function setOperator(value) {
-    if (operator && firstNum !== '') {
+    // תנאי הפותר בעיה של הזנה רציפה כמו: 3 כפול 2 ועוד 4
+    if (operator && firstNum !== '') { // תנאי של הזנה רציפה... לכן נריץ בלווק
         secondNum = displayValue;
         const result = operate(Number(firstNum), operator, Number(secondNum));
         displayValue = result.toString();
@@ -63,8 +62,6 @@ function setOperator(value) {
     operator = value;
     displayValue = '0';
 }
-
-
 
 
 function calculateResult() {
@@ -82,7 +79,7 @@ buttons.forEach(button => {
         const value = button.textContent;
         if (!isNaN(value) || value === ".") {
             updateDisplay(value);
-        } else if (['+', '-', '*', '/'].includes(value)) {
+        } else if (['+', '-', 'X', '/'].includes(value)) {
             setOperator(value);
         } else if (value === "=") {
             calculateResult();
