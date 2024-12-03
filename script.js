@@ -47,11 +47,25 @@ function clearDisplay() {
     document.querySelector("#display").textContent = displayValue;
 }
 
+
+
+
 function setOperator(value) {
-    firstNum = displayValue;
+    if (operator && firstNum !== '') {
+        secondNum = displayValue;
+        const result = operate(Number(firstNum), operator, Number(secondNum));
+        displayValue = result.toString();
+        document.querySelector("#display").textContent = displayValue;
+        firstNum = result.toString();
+    } else {
+        firstNum = displayValue;
+    }
     operator = value;
     displayValue = '0';
 }
+
+
+
 
 function calculateResult() {
     secondNum = displayValue;

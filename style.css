@@ -4,7 +4,6 @@ body {
     align-items: center;
     margin: 0;
     height: 100vh;
-    /* לדאוג שהעמוד יתפוס את כל הגובה */
 }
 
 h1 {
@@ -16,7 +15,6 @@ button {
     height: 60px;
     font-size: 22px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* height: 40px; */
     border-radius: 50%;
     border: none;
     background-color: #e0e0e0;
@@ -29,7 +27,7 @@ button {
 .operation:hover {
     background-color: #565555;
     color: white;
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 #calculator {
@@ -42,17 +40,13 @@ button {
     background-color: #f1f1f1;
     border-radius: 10px;
     box-sizing: border-box;
-    /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
 }
 
 #calculator div {
     display: flex;
     justify-content: space-around;
     margin-bottom: 10px;
-    /* width: 80%; */
 }
-
-
 
 .operation {
     background-color: orange;
@@ -63,19 +57,9 @@ button {
     gap: 5px;
 }
 
-#equal {
-    background-color: lightcoral;
-    font-weight: bold;
-}
-
-#equal:hover {
-    background-color: saddlebrown;
-    color: #333;
-    font-weight: 800;
-}
 
 #clear {
-    background-color: rgb(184, 8, 8);
+    background-color: rgb(176, 71, 92);
     color: #f1f1f1;
 }
 
